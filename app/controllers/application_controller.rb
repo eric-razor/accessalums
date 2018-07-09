@@ -3,4 +3,8 @@ class ApplicationController < ActionController::Base
     # ssss
   end
 
+  def logged_in?
+   # sssssss
+  end
+
 end
