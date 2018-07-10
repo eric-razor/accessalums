@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
-  resources :comments
-  resources :pitches
-  resources :projects
+  get '/', to: 'students#welcome'
   resources :students
-
-  #I don't think we need to specicy becauyse the we can perform all crud actions on all resources. I think.
+  resources :projects
+  resources :pitches
+  resources :comments
+  get '/login', to: "sessions#new", as: 'login'
+  delete '/sessions', to: 'sessions#destroy', as: 'logout'
+  post '/sessions', to: "sessions#create", as: 'sessions'
 end

@@ -1,29 +1,31 @@
 class StudentsController < ApplicationController
+  # before_action :authorized
+  # skip_before_action :authorized, only: [:welcome]
 
   # [:show, :new, :create,:edit,:update, :destroy]
+  def welcome
+    render :welcome #a welcome page
+  end
 
   def index
     #wouldn't this represent all of a students followers?
     @students = Student.all
-
   end
 
-
-
   def new
-    @user = User.new
-
+    @student = Student.new
   end
 
   def show
-    @user = User.find(params[:id])
+    @student = Student.find(params[:id])
   end
 
   def create
-    @user = User.new(user_params)
-    if @user.valid?
-      @user.save
-      redirect_to @user
+    # byebug
+    @student = Student.new(student_params)
+    if @student.valid?
+      @student.save
+      redirect_to @student
     else
       render :new
     end
@@ -41,10 +43,10 @@ class StudentsController < ApplicationController
 
   end
 
-  # private
-  # def student_params
-  #   params.require(:student).permit()
-  #
-  # end
+  private
+  def student_params
+    params.require(:student).permit(:name, :bio, :email, :password, :password_confirmation)
+
+  end
 
 end

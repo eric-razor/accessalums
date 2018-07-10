@@ -1,1 +1,21 @@
-<%= @student.name %>
+<center>
+  <h1>Show me a student</h1>
+</center>
+
+<center>
+  <p>
+    <%= @student.name %>
+  </p>
+
+  <p>
+    <%= @student.bio %>
+  </p>
+
+  <% @student.projects.each do |project| %>
+    <li>
+      <%= project.name %>
+      <%= project.url_link %>
+    </li>
+  <% end %>
+  <%= link_to "Students", students_path %>
+</center>
