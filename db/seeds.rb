@@ -31,9 +31,45 @@
 # end
 # ---------------------------------------------------------------------------------------------------
 
-# Student.destroy_all
-# Project.destroy_all
-# Pitch.destroy_all
 require 'faker'
 
-eric = Student.new(name: "Eric", bio: "be who be with")
+Student.destroy_all
+Pitch.destroy_all
+Comment.destroy_all
+Project.destroy_all
+
+#
+#
+#
+#
+10.times do
+  Student.create(
+    name: Faker::Artist.unique.name,
+    bio: Faker::Color.rgb_color,
+    email: Faker::Internet.email,
+    password_digest: Faker::Internet.password
+  )
+end
+
+10.times do
+  Pitch.create(
+    title: Faker::Beer.name,
+    content: Faker::Company.catch_phrase,
+    student: Student.all.sample
+  )
+end
+
+10.times do
+  Comment.create(
+    content: Faker::FamilyGuy.quote,
+    pitch: Pitch.all.sample
+  )
+end
+
+10.times do
+  Project.create(
+    name: Faker::Friends.character,
+    url_link: Faker::Avatar.image,
+    student: Student.all.sample
+  )
+end
