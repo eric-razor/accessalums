@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
-<<<<<<< HEAD
+
   # before_action :authorized
-=======
+
 
   def index
     @comments = Comment.all
@@ -27,6 +27,6 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new
   end
->>>>>>> 110665d3f1467f3766e691093b47f7bab59dc98a
+
 
 end

@@ -16,4 +16,10 @@ class ApplicationController < ActionController::Base
     redirect_to login_path unless logged_in?
   end
 
+  def matching_student
+    if current_student && current_student.id != params[:id]
+      redirect_to students_path #error page down the line
+    end
+  end
+
 end
