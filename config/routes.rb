@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   resources :pitches
   resources :projects
   resources :students
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  #I don't think we need to specicy becauyse the we can perform all crud actions on all resources. I think.
 end
