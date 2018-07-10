@@ -1,0 +1,17 @@
+<marquee><%= link_to "New Pitch", new_pitch_path %> </marquee>
+
+<% @pitches.each do |pitch| %>
+<li><%= link_to pitch.title, pitch%></li>
+<li><%= pitch.content %></li>
+<% end %>
+
+
+
+<!--
+create_table "pitches", force: :cascade do |t|
+  t.string "title"
+  t.text "content"
+  t.integer "student_id"
+  t.datetime "created_at", null: false
+  t.datetime "updated_at", null: false
+end -->

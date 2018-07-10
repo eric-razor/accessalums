@@ -38,10 +38,7 @@ Pitch.destroy_all
 Comment.destroy_all
 Project.destroy_all
 
-#
-#
-#
-#
+
 10.times do
   Student.create(
     name: Faker::Artist.unique.name,
