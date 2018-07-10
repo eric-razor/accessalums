@@ -1,14 +1,6 @@
 class PitchesController < ApplicationController
   # before_action :authorized
 
-  #
-  # create_table "pitches", force: :cascade do |t|
-  #   t.string "title"
-  #   t.text "content"
-  #   t.integer "student_id"
-  #   t.datetime "created_at", null: false
-  #   t.datetime "updated_at", null: false
-  # end
     def index
       @pitches = Pitch.all
     end
