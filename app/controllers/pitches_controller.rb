@@ -21,7 +21,7 @@ class PitchesController < ApplicationController
     end
 
     def create
-
+      
     end
 
 end
