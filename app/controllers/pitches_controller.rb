@@ -21,10 +21,7 @@ class PitchesController < ApplicationController
     end
 
     def create
-      @pitch = Pitch.new
+
     end
-
-  end
-
 
 end
