@@ -18,7 +18,7 @@ class PitchesController < ApplicationController
     end
 
     def edit
-
+      #@pitch = Pitch.find(params[:id])
 
     end
 
@@ -32,13 +32,24 @@ class PitchesController < ApplicationController
 
     def create
       @pitch = Pitch.new(pitch_params)
-      byebug
+      @pitch.student_id = session[:student_id] #finding the session that belongs to the pitch
       if @pitch.valid?
         @pitch.save
-        redirect to @pitch
+        redirect_to @pitch
       else
         render :new
       end
+
+
+
+
+      #
+      # if (@pitch[:title] ||  @pitch[:content]) == nil
+      #   redirect :new
+      # else
+      #   @pitch.save
+      #   render :index
+      # end
     end
 
     def pitch_params
