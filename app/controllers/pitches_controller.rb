@@ -15,11 +15,13 @@ class PitchesController < ApplicationController
 
     def show
       @pitch = Pitch.find(params[:id])
+      @comments = @pitch.comments
+      @comment = Comment.new
+      # render :show
     end
 
     def edit
       @pitch = Pitch.find(params[:id])
-
     end
 
     def update
@@ -41,6 +43,7 @@ class PitchesController < ApplicationController
       else
         render :new
       end
+    end
 
     def pitch_params
       params.require(:pitch).permit(:title, :content)

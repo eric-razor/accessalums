@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
   # before_action :authorized
+  
 
   def index
     @projects = Project.all
