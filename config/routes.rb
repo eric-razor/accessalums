@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  resources :comments
-  resources :pitches
-  resources :projects
+  get '/', to: 'students#welcome', as: 'welcome'
   resources :students
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :projects
+  resources :pitches
+  resources :comments
+  get '/login', to: "sessions#new", as: 'login'
+  delete '/sessions', to: 'sessions#destroy', as: 'logout'
+  post '/sessions', to: "sessions#create", as: 'sessions'
 end
