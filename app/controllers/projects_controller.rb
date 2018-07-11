@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
   # before_action :authorized
-  
+
 
   def index
     @projects = Project.all
@@ -32,11 +32,13 @@ class ProjectsController < ApplicationController
   def update
     @project = Project.find(params[:id])
     @project.update(project_params)
-    #redirect_to project issues redirecting
+    redirect_to project_path
   end
 
   def destroy
-
+    @project = Project.find(params[:id])
+    @project.destroy
+    redirect_to projects_path
   end
 
   private

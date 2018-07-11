@@ -45,6 +45,10 @@ class PitchesController < ApplicationController
       end
     end
 
+    def destroy
+
+    end
+
     def pitch_params
       params.require(:pitch).permit(:title, :content)
     end
