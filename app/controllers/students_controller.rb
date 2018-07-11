@@ -15,10 +15,9 @@ class StudentsController < ApplicationController
 
   def new
     @student = Student.new
-<<<<<<< HEAD
 
-=======
->>>>>>> 02f2d953d81b369b951cf31f748fef4e7493954b
+
+
   end
 
   def show
@@ -26,19 +25,10 @@ class StudentsController < ApplicationController
   end
 
   def create
-<<<<<<< HEAD
-    @student = Student.new(user_params)
-    if @student.valid?
-      @student.save
-=======
-    # byebug
     @student = Student.new(student_params)
     if @student.valid?
       @student.save
-
       session[:student_id] = @student.id
-
->>>>>>> 02f2d953d81b369b951cf31f748fef4e7493954b
       redirect_to @student
     else
       render :new
@@ -59,7 +49,6 @@ class StudentsController < ApplicationController
 
   def destroy
     @student = Student.find(params[:id])
-
     @student.destroy
 
     redirect_to students_path

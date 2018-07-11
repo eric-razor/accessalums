@@ -1,0 +1,9 @@
+<%= form_for @pitch,method: "put" do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title, :value => @pitch.title %>
+
+  <%= f.label :content %>
+  <%= f.text_area :content, :alias => params[:@content] %>
+
+  <%= f.submit %>
+<% end %>
