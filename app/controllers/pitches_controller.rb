@@ -18,12 +18,14 @@ class PitchesController < ApplicationController
     end
 
     def edit
-      #@pitch = Pitch.find(params[:id])
+      @pitch = Pitch.find(params[:id])
 
     end
 
     def update
-
+      @pitch = Pitch.find(params[:id])
+      @pitch.update(pitch_params)
+      redirect_to @pitch
     end
 
     def new
@@ -40,20 +42,10 @@ class PitchesController < ApplicationController
         render :new
       end
 
-
-
-
-      #
-      # if (@pitch[:title] ||  @pitch[:content]) == nil
-      #   redirect :new
-      # else
-      #   @pitch.save
-      #   render :index
-      # end
-    end
-
     def pitch_params
       params.require(:pitch).permit(:title, :content)
     end
+
+    # Finish all this tonight
 
 end

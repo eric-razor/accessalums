@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get '/', to: 'students#welcome'
+  get '/', to: 'students#welcome', as: 'welcome'
   resources :students
   resources :projects
   resources :pitches
