@@ -1,4 +1,4 @@
-<button type="button" class="btn btn-secondary"><%= link_to "Pitch!", new_pitch_path %></button>
+<button type="button" class="btn btn-secondary"><%= link_to "Add Project", new_project_path %></button>
 
 <% @projects.each do |project| %>
 <li><%= link_to project.name, project %> => <%= project.url_link %></li>

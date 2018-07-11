@@ -17,6 +17,8 @@
       <%= project.url_link %>
     </li>
   <% end %>
-  <%= link_to "Edit Student", edit_student_path(@student) %> <br>
-  <%= link_to "All students", students_path %>
+
+    <% if current_student == @student %>
+      <%= link_to "Edit Profile", edit_student_path(@student) %>
+    <% end %>
 </center>

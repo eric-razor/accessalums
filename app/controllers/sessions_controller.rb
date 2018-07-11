@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
   #login
   def new
-    
+
   end
  #check if password is correct for this student
   def create
