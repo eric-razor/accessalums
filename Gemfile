@@ -31,6 +31,7 @@ gem 'bootstrap'
 gem 'jquery-rails'
 gem 'sass'
 
+gem 'rails_autolink'
 
 # Use ActiveStorage variant
 gem 'mini_magick', '~> 4.8'

@@ -1,16 +1,23 @@
 <h1>Edit Profile</h1>
 <%= form_for @student do |f| %>
-  <%= f.label "Name" %>
+  <p>
+    <%= f.label "Name" %>
   <%= f.text_field :name %>
+  <br>
   <%= f.label "Biography" %>
+  <br>
   <%= f.text_area :bio %>
+  <br>
   <%= f.label "Email" %>
   <%= f.text_field :email %>
+  <br>
   <%= f.label "Password" %>
   <%= f.password_field :password %>
+  <br>
   <%= f.label "Password Confirmation" %>
   <%= f.password_field :password_confirmation %>
   <%= f.submit "Submit" %>
+  </p>
 <% end %>
 <%= button_to "DESTROY #{@student.name}", student_path(@student), method: :delete, class: 'btn, btn-danger' %>
 <!--  lol -->
