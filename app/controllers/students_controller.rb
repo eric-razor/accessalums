@@ -10,7 +10,7 @@ class StudentsController < ApplicationController
 
   def index
     #wouldn't this represent all of a students followers?
-    @students = Student.all
+    @students = Student.with_attached_profile_picture
   end
 
   def new
@@ -39,7 +39,6 @@ class StudentsController < ApplicationController
   end
 
   def update
-
     @student = Student.find(params[:id])
     @student.update(student_params)
 

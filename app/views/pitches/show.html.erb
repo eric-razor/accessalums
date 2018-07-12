@@ -1,7 +1,7 @@
 <center>
 <%= @pitch.title %></li>
 <%= @pitch.content %></li>
-<%= @pitch.student_id %></li>
+<!-- <%= @pitch.student_id %></li> -->
 
 <ul>
 <% @comments.each do |comment|  %>
@@ -13,7 +13,10 @@
 
 <%= form_for @comment, url: pitch_comments_path(@pitch) do |f| %>
   <%= f.text_field :content, placeholder: "Write a comment..." %>
-  <%= f.submit  %>
+  <%= f.submit  %> <br>
+
+  <%= link_to "Edit Pitch", edit_pitch_path%>
+
 <% end %>
 </center>
 
