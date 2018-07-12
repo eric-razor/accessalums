@@ -3,9 +3,7 @@ class Student < ApplicationRecord
   has_many :pitches
   has_many :comments, through: :pitches
   has_secure_password
-  mount_uploader :avatar, AvatarUploader
-  serialize :avatar, JSON
-
+  has_one_attached :profile_picture
 end
 #how do you know what can be named anything and when it can't?
 #use css syntax example

@@ -10,7 +10,7 @@ class StudentsController < ApplicationController
 
   def index
     #wouldn't this represent all of a students followers?
-    @students = Student.all
+    @students = Student.with_attached_profile_picture
   end
 
   def new
@@ -22,7 +22,6 @@ class StudentsController < ApplicationController
   end
 
   def create
-    # byebug
     @student = Student.new(student_params)
     if @student.valid?
       @student.save
@@ -42,12 +41,14 @@ class StudentsController < ApplicationController
   def update
     @student = Student.find(params[:id])
     @student.update(student_params)
+
     redirect_to student_path(@student)
   end
 
   def destroy
     @student = Student.find(params[:id])
     @student.destroy
+
     redirect_to students_path
   end
 
@@ -58,7 +59,7 @@ class StudentsController < ApplicationController
   # end
 
   def student_params
-    params.require(:student).permit(:name, :bio, :email, :password, :password_confirmation, {avatar: []})
+    params.require(:student).permit(:name, :bio, :email, :password, :password_confirmation, :profile_picture)
   end
 
 end
