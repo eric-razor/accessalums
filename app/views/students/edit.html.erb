@@ -1,4 +1,4 @@
-<h1>Edit</h1>
+<h1>Edit Profile</h1>
 <%= form_for @student do |f| %>
   <%= f.label "Name" %>
   <%= f.text_field :name %>
@@ -10,6 +10,7 @@
   <%= f.password_field :password %>
   <%= f.label "Password Confirmation" %>
   <%= f.password_field :password_confirmation %>
-  <%= f.submit "Submit Edit" %>
+  <%= f.submit "Submit" %>
 <% end %>
 <%= button_to "DESTROY #{@student.name}", student_path(@student), method: :delete, class: 'btn, btn-danger' %>
+<!--  lol -->

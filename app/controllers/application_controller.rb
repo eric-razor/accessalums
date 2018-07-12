@@ -17,8 +17,8 @@ class ApplicationController < ActionController::Base
   end
 
   def matching_student
-    if current_student && current_student.id != params[:id]
-      redirect_to students_path #error page down the line
+    if current_student && current_student.id != params[:id].to_i
+      redirect_to student_path(current_student) #error page down the line
     end
   end
 

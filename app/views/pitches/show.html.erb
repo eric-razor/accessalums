@@ -1,8 +1,22 @@
 <center>
-<li><%= @pitch.title %></li>
-<li><%= @pitch.content %></li>
-<li><%= @pitch.student_id %></li>
+<%= @pitch.title %></li>
+<%= @pitch.content %></li>
+<%= @pitch.student_id %></li>
+
+<ul>
+<% @comments.each do |comment|  %>
+<li>
+<%= comment.content %>
+</li>
+<% end %>
+</ul>
+
+<%= form_for @comment, url: pitch_comments_path(@pitch) do |f| %>
+  <%= f.text_field :content, placeholder: "Write a comment..." %>
+  <%= f.submit  %>
+<% end %>
 </center>
+
 
 
 <!-- create_table "pitches", force: :cascade do |t|

@@ -1,5 +1,5 @@
 <center>
-  <h1>Show me a student</h1>
+  <h1>Your Profile</h1>
 </center>
 
 <center>
@@ -17,6 +17,8 @@
       <%= project.url_link %>
     </li>
   <% end %>
-  <%= link_to "Edit", edit_student_path(@student) %>
-  <%= link_to "Students", students_path %>
+
+    <% if current_student == @student %>
+      <%= link_to "Edit Profile", edit_student_path(@student) %>
+    <% end %>
 </center>

@@ -15,11 +15,13 @@ class PitchesController < ApplicationController
 
     def show
       @pitch = Pitch.find(params[:id])
+      @comments = @pitch.comments
+      @comment = Comment.new
+      # render :show
     end
 
     def edit
       @pitch = Pitch.find(params[:id])
-
     end
 
     def update
@@ -34,13 +36,17 @@ class PitchesController < ApplicationController
 
     def create
       @pitch = Pitch.new(pitch_params)
-      @pitch.student_id = session[:student_id]
+      @pitch.student_id = session[:student_id] #finding the session that belongs to the pitch
       if @pitch.valid?
         @pitch.save
         redirect_to @pitch
       else
         render :new
       end
+    end
+
+    def destroy
+
     end
 
     def pitch_params
