@@ -1,4 +1,8 @@
 <h1> SHOW PAGE FOR PROJECT</h1>
   <%= @project.name %>
-  <%= @project.url_link %>
+  <%= auto_link(@project.url_link.to_s) %>
+
+  
+<% if current_student == @project.student %>
   <%= (link_to "Edit Project", edit_project_path) %>
+<% end %>

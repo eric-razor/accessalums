@@ -1,5 +1,5 @@
 class PitchesController < ApplicationController
-  # before_action :authorized
+  before_action :authorized
 
   #
   # create_table "pitches", force: :cascade do |t|

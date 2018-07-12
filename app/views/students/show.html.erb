@@ -1,24 +1,24 @@
 <center>
-  <h1>Your Profile</h1>
+  <h1><%= @student.name.downcase.capitalize %>
+    Profile</h1>
 </center>
 
 <center>
-  <p>
-    <%= @student.name %>
-  </p>
 
   <p>
+    <label for="">Biography:</label>
+    <br>
     <%= @student.bio %>
   </p>
 
+  <h2><%= @student.name %>'s Projects'</h2>
   <% @student.projects.each do |project| %>
-    <li>
-      <%= project.name %>
-      <%= project.url_link %>
-    </li>
+      <h4><%= link_to project.name, project_path(project) %></h4>
+      <p><%= auto_link(project.url_link) %></p>
   <% end %>
 
-    <% if current_student == @student %>
-      <%= link_to "Edit Profile", edit_student_path(@student) %>
-    <% end %>
+  <% if current_student == @student %>
+    <%= button_to "Edit Profile", edit_student_path(@student), method: :get, class: 'btn, btn-info'%>
+  <% end %>
+
 </center>

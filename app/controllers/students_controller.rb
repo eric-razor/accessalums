@@ -1,10 +1,11 @@
 class StudentsController < ApplicationController
-  # before_action :authorized
+  before_action :authorized
   before_action :matching_student, only: [:edit, :update, :destroy]
-  # skip_before_action :authorized, only: [:welcome, :new, :create, :show]
+  skip_before_action :authorized, only: [:welcome, :index, :new, :create, :show]
 
   # [:show, :new, :create,:edit,:update, :destroy]
   def welcome
+    # redirect_to current_student
     render :welcome #a welcome page
   end
 
@@ -26,7 +27,7 @@ class StudentsController < ApplicationController
     @student = Student.new(student_params)
     if @student.valid?
       @student.save
-# first time naming student_id 29
+      # first time naming student_id 29
       session[:student_id] = @student.id #
 
       redirect_to @student
@@ -52,11 +53,6 @@ class StudentsController < ApplicationController
   end
 
   private
-
-  # def find_student
-  #   @student = Student.find(params[:id])
-  # end
-
   def student_params
     params.require(:student).permit(:name, :bio, :email, :password, :password_confirmation, {avatar: []})
   end
