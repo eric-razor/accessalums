@@ -22,6 +22,7 @@ class StudentsController < ApplicationController
   end
 
   def create
+    # byebug
     @student = Student.new(student_params)
     if @student.valid?
       @student.save
@@ -57,7 +58,7 @@ class StudentsController < ApplicationController
   # end
 
   def student_params
-    params.require(:student).permit(:name, :bio, :email, :password, :password_confirmation)
+    params.require(:student).permit(:name, :bio, :email, :password, :password_confirmation, {avatar: []})
   end
 
 end

@@ -1,15 +1,21 @@
 <h1>Create a new student</h1>
 <%= form_for @student do |f| %>
   <%= f.label "Name" %>
-  <%= f.text_field :name %>
+  <%= f.text_field :name %> <br>
+
   <%= f.label "Biography" %>
-  <!--  is this right? ^ v-->
-  <%= f.text_area :bio %>
+  <%= f.text_area :bio %> <br>
+
   <%= f.label "Email" %>
-  <%= f.text_field :email %>
+  <%= f.text_field :email %> <br>
+
   <%= f.label "Password" %>
-  <%= f.password_field :password %>
+  <%= f.password_field :password %> <br>
+
   <%= f.label "Password Confirmation" %>
-  <%= f.password_field :password_confirmation %>
+  <%= f.password_field :password_confirmation %> <br>
+
+  <%= f.file_field :avatar, multiple: true %>
+
   <%= f.submit "Sign up" %>
 <% end %>
