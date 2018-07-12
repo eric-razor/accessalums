@@ -14,8 +14,10 @@
 
   <%= f.label "Password Confirmation" %>
   <%= f.password_field :password_confirmation %> <br>
+<!--  multiple: true-->
+  <%= f.label :profile_picture %>
+  <%= f.file_field :profile_picture %> <br>
 
-  <%= f.file_field :avatar, multiple: true %>
 
   <%= f.submit "Sign up" %>
 <% end %>

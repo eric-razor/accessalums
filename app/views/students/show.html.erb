@@ -2,7 +2,20 @@
   <h1>Your Profile</h1>
 </center>
 
+
+
+
+
 <center>
+  <% if @student.profile_picture.attached? %>
+  <!-- @post.image.present? will always return true, use attached? to check presence -->
+  <p>
+    <strong>Image:</strong>
+    <br>
+    <%= image_tag @student.profile_picture %>
+  </p>
+  <% end %>
+
   <p>
     <%= @student.name %>
   </p>
@@ -15,6 +28,7 @@
     <li>
       <%= project.name %>
       <%= project.url_link %>
+
     </li>
   <% end %>
 
