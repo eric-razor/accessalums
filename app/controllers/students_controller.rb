@@ -3,6 +3,7 @@ class StudentsController < ApplicationController
   before_action :matching_student, only: [:edit, :update, :destroy]
   skip_before_action :authorized, only: [:welcome, :index, :new, :create, :show]
 
+
   # [:show, :new, :create,:edit,:update, :destroy]
   def welcome
     # redirect_to current_student
@@ -28,7 +29,6 @@ class StudentsController < ApplicationController
       @student.save
       # first time naming student_id 29
       session[:student_id] = @student.id #
-
       redirect_to @student
     else
       render :new

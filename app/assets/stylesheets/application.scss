@@ -27,19 +27,19 @@
 
 #header {
   text-align: left;
-  font-family: cursive;
+  font-family: beirut;
+  // cursive,
   color: #45ff07;
 }
 
 #footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: red;
-  color: white;
-  text-align: center;
-  padding: 10px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: transparent;
+    color: white;
+    text-align: center;
 }
 
 body {
@@ -48,4 +48,9 @@ body {
   background-size: cover;
 
 }
+
+.student_image {
+  width: 30rem;
+}
+
 //
