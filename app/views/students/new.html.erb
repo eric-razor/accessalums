@@ -16,22 +16,22 @@
       <h1>Create a new student</h1>
       <%= form_for @student do |f| %>
         <%= f.label "Name" %>
-        <%= f.text_field :name %> <br>
+        <%= f.text_field :name, class: "form-control" %> <br>
 
         <%= f.label "Biography" %>
-        <%= f.text_area :bio %> <br>
+        <%= f.text_area :bio, class: "form-control" %> <br>
 
         <%= f.label "Email" %>
-        <%= f.text_field :email %> <br>
+        <%= f.text_field :email, class: "form-control" %> <br>
 
         <%= f.label "Password" %>
-        <%= f.password_field :password %> <br>
+        <%= f.password_field :password, class: "form-control" %> <br>
 
         <%= f.label "Password Confirmation" %>
-        <%= f.password_field :password_confirmation %> <br>
+        <%= f.password_field :password_confirmation, class: "form-control" %> <br>
 
         <%= f.label "Programming languages" %>
-        <%= f.text_field :langauge %> <br>
+        <%= f.text_field :langauge, class: "form-control" %> <br>
       <!--  multiple: true-->
 
 
@@ -48,3 +48,4 @@
   </div>
 </body>
 </html>
+``
