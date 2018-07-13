@@ -1,0 +1,13 @@
+<h1>Edit Project</h1>
+<%= form_for @project, method: "put" do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :url_link %>
+  <%= f.text_field :url_link %>
+
+  <%= f.submit "Update Project"%>
+
+
+
+<% end %>

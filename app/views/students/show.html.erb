@@ -1,22 +1,36 @@
 <center>
-  <h1>Show me a student</h1>
+  <h1>Profile</h1>
 </center>
 
+
 <center>
+  <% if @student.profile_picture.attached? %>
+  <!-- @post.image.present? will always return true, use attached? to check presence -->
   <p>
+    <br>
+    <%= image_tag @student.profile_picture, class: "student_image" %>
+  </p>
+  <% end %>
+
+  <p>
+  <div class="student_show_info">
     <%= @student.name %>
   </p>
 
   <p>
     <%= @student.bio %>
   </p>
+  </div>
 
   <% @student.projects.each do |project| %>
     <li>
       <%= project.name %>
       <%= project.url_link %>
+
     </li>
   <% end %>
-  <%= link_to "Edit", edit_student_path(@student) %>
-  <%= link_to "Students", students_path %>
+
+    <% if current_student == @student %>
+      <%= link_to "Edit Profile", edit_student_path(@student) %>
+    <% end %>
 </center>

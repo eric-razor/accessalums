@@ -10,6 +10,40 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
+
  */
+@import 'bootstrap';
+
+#yield_div {
+  margin: 2%;
+}
+
+
+
+#student_profile_picture {
+  color: #fff;
+  border-radius: 5px;
+  background-color: #dd3c45;
+  border-color: #17a2b8;
+}
+
+
+.student_image {
+  width: 30rem;
+}
+
+// body {
+//   background-color: lightblue;
+// }
+
+.student_show_info {
+  
+
+}
+
+
+
+
+// .student_names {
+//   font-size: 50px;
+// }

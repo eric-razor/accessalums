@@ -10,14 +10,11 @@ class StudentsController < ApplicationController
 
   def index
     #wouldn't this represent all of a students followers?
-    @students = Student.all
+    @students = Student.with_attached_profile_picture
   end
 
   def new
     @student = Student.new
-
-
-
   end
 
   def show
@@ -28,7 +25,9 @@ class StudentsController < ApplicationController
     @student = Student.new(student_params)
     if @student.valid?
       @student.save
-      session[:student_id] = @student.id
+# first time naming student_id 29
+      session[:student_id] = @student.id #
+
       redirect_to @student
     else
       render :new
@@ -37,7 +36,6 @@ class StudentsController < ApplicationController
 
   def edit
     @student = Student.find(params[:id])
-
   end
 
   def update
@@ -61,8 +59,7 @@ class StudentsController < ApplicationController
   # end
 
   def student_params
-    params.require(:student).permit(:name, :bio, :email, :password, :password_confirmation)
-
+    params.require(:student).permit(:name, :bio, :email, :password, :password_confirmation, :profile_picture)
   end
 
 end
