@@ -12,9 +12,40 @@
  *
 
  */
-
 @import 'bootstrap';
 
 #yield_div {
   margin: 2%;
 }
+
+#container {
+  width: 800px;
+  // margin-left: auto;
+  // margin-right: auto;
+  font-size: 18pt;
+}
+
+#header {
+  text-align: left;
+  font-family: cursive;
+  color: #45ff07;
+}
+
+#footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: red;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+body {
+  background-image: url("http://24.media.tumblr.com/2bd24e4d9ad060b7a25b29a9649125d3/tumblr_msrxm5Fb111ru39xmo1_500.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+//

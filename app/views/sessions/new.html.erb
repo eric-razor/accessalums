@@ -1,7 +1,26 @@
-<%= form_tag sessions_path do %>
-  <%= label_tag "Email" %>
-  <%= text_field_tag :email %>
-  <%= label_tag "Password" %>
-  <%= password_field_tag :password %>
-  <%= submit_tag "Login" %>
-<% end %>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+  </head>
+  <link rel="stylesheet" href="application.scss">
+  <body>
+    <div id="container">
+      <div id="header">
+        <%= form_tag sessions_path do %>
+        <%= label_tag "Email" %>
+        <%= text_field_tag :email %>
+        <%= label_tag "Password" %>
+        <%= password_field_tag :password %>
+        <%= submit_tag "Login" %>
+      <% end %>
+    </div>
+    <div id="footer">
+      Copyright &copy; 2018 Charlie Tung & Eric Razor
+    </div>
+  </div>
+</body>
+</html>

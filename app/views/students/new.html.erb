@@ -1,23 +1,50 @@
-<h1>Create a new student</h1>
-<%= form_for @student do |f| %>
-  <%= f.label "Name" %>
-  <%= f.text_field :name %> <br>
-
-  <%= f.label "Biography" %>
-  <%= f.text_area :bio %> <br>
-
-  <%= f.label "Email" %>
-  <%= f.text_field :email %> <br>
-
-  <%= f.label "Password" %>
-  <%= f.password_field :password %> <br>
-
-  <%= f.label "Password Confirmation" %>
-  <%= f.password_field :password_confirmation %> <br>
-<!--  multiple: true-->
-  <%= f.label :profile_picture %>
-  <%= f.file_field :profile_picture %> <br>
 
 
-  <%= f.submit "Sign up" %>
-<% end %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<link rel="stylesheet" href="application.scss">
+<body>
+  <div id="container">
+    <div id="header">
+      <h1>Create a new student</h1>
+      <%= form_for @student do |f| %>
+        <%= f.label "Name" %>
+        <%= f.text_field :name %> <br>
+
+        <%= f.label "Biography" %>
+        <%= f.text_area :bio %> <br>
+
+        <%= f.label "Email" %>
+        <%= f.text_field :email %> <br>
+
+        <%= f.label "Password" %>
+        <%= f.password_field :password %> <br>
+
+        <%= f.label "Password Confirmation" %>
+        <%= f.password_field :password_confirmation %> <br>
+
+        <%= f.label "Programming languages" %>
+        <%= f.text_field :langauge %> <br>
+      <!--  multiple: true-->
+
+
+        <%= f.label :profile_picture %>
+        <%= f.file_field :profile_picture %> <br>
+
+
+        <%= f.submit "Sign up" %>
+      <% end %>
+    </div>
+    <div id="footer">
+      Copyright &copy; 2018 Charlie Tung & Eric Razor
+    </div>
+  </div>
+</body>
+</html>

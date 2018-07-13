@@ -1,42 +1,60 @@
-<center>
-  <h1><%= @student.name.downcase.capitalize %>
-    Profile</h1>
-</center>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="application.scss">
 
+    <title>Document</title>
+  </head>
+  <body>
 
-<center>
-  <% if @student.profile_picture.attached? %>
-  <!-- @post.image.present? will always return true, use attached? to check presence -->
-  <p>
-    <strong>Image:</strong>
-    <br>
-    <%= image_tag @student.profile_picture %>
-  </p>
-  <% end %>
+    <div id="container">
 
-  <p>
-    <%= @student.name %>
-  </p>
+      <div id="header">
+        <h1><%= @student.name.downcase.capitalize %>
+          Profile
+        </h1>
 
-  <p>
-    <label for="">Biography:</label>
-    <br>
-    <%= @student.bio %>
-  </p>
+        <% if @student.profile_picture.attached? %>
+          <!-- @post.image.present? will always return true, use attached? to check presence -->
+          <p>
+            <strong>Image:</strong>
+            <br>
+            <%= image_tag @student.profile_picture %>
+          </p>
+        <% end %>
 
-  <h2><%= @student.name %>'s Projects'</h2>
-  <% @student.projects.each do |project| %>
-    <li>
-      <%= project.name %>
-      <%= project.url_link %>
+        <p>
+          <label for="">Biography:</label>
+          <br>
+          <%= @student.bio %>
+        </p>
 
-    </li>
-      <h4><%= link_to project.name, project_path(project) %></h4>
-      <p><%= auto_link(project.url_link) %></p>
-  <% end %>
+        <p>
+          <label for="">Email:</label>
+          <br>
+          <%= @student.email %>
+        </p>
 
-  <% if current_student == @student %>
-    <%= button_to "Edit Profile", edit_student_path(@student), method: :get, class: 'btn, btn-info'%>
-  <% end %>
+        <% @student.projects.each do |project| %>
+          <b><%= link_to project.name.downcase.capitalize, project_path(project) %></b>
+          <p><%= auto_link(project.url_link) %></p>
+        <% end %>
 
-</center>
+        <b>Languages</b>
+        <p><%= @student.langauge %></p>
+
+        <% if current_student == @student %>
+          <%= button_to "Edit Profile", edit_student_path(@student), method: :get, class: 'btn, btn-info'%>
+        <% end %>
+      </div>
+
+    </div>
+    <div id="footer">
+      Copyright &copy; 2018 Charlie Tung & Eric Razor
+    </div>
+
+  </body>
+</html>

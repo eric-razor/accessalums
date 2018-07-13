@@ -1,19 +1,30 @@
-<%= form_for @pitch do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
 
-  <%= f.label :content %>
-  <%= f.text_area :content %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<link rel="stylesheet" href="application.scss">
+<body>
+  <div id="container">
+    <div id="header">
+      <%= form_for @pitch do |f| %>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
 
-  <%= f.submit %>
-<% end %>
+      <%= f.label :content %>
+      <%= f.text_area :content %>
 
+      <%= f.submit %>
+      <% end %>
 
-
-<!--
-create_table "pitches", force: :cascade do |t|
-#   t.string "title"
-#   t.text "content"
-#   t.integer "student_id"
-#   t.datetime "created_at", null: false
-#   t.datetime "updated_at", null: false -->
+    </div>
+    <div id="footer">
+      Copyright &copy; 2018 Charlie Tung & Eric Razor
+    </div>
+  </div>
+</body>
+</html>

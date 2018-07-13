@@ -1,6 +1,29 @@
-<center>
-  <h1>Student's index</h1>
-  <% @students.each do |student| %>
-  <li><%= link_to student.name, student_path(student) %></li>
-  <% end %>  
-</center>
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<link rel="stylesheet" href="application.scss">
+<body>
+  <div id="container">
+
+    <div id="header">
+      <h1>Student's index</h1>
+      <% @students.each do |student| %>
+      <li style="list-style-type: none"><%= link_to student.name, student_path(student) %></li>
+      <% end %>
+    </div>
+    <div id="footer">
+      Copyright &copy; 2018 Charlie Tung & Eric Razor
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,5 +1,30 @@
-<button type="button" class="btn btn-secondary"><%= link_to "Add Project", new_project_path %></button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="application.scss">
 
-<% @projects.each do |project| %>
-<li><%= link_to project.name, project %> => <%= project.url_link %></li>
-<% end %>
+  <title>Document</title>
+</head>
+<body>
+  <div id="container">
+
+    <div id="header">
+
+      <button type="button" class="btn btn-secondary"><%= link_to "Add Project", new_project_path %></button>
+
+
+      <% @projects.each do |project| %>
+      <li style="list-style-type: none";><%= link_to project.name, project %></li>
+
+      <% end %>
+    </div>
+
+  </div>
+  <div id="footer">
+    Copyright &copy; 2018 Charlie Tung & Eric Razor
+  </div>
+</body>
+</html>

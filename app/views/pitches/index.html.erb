@@ -1,16 +1,29 @@
-<%= link_to "New Pitch", new_pitch_path %>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+  </head>
+  <link rel="stylesheet" href="application.scss">
 
-<% @pitches.each do |pitch| %>
-<li><%= link_to pitch.title, pitch%> <strong>Content: </strong> <%= pitch.content %></li>
-<% end %>
+  <body>
+    <div id="container">
+      <div id="header">
+        <%= link_to "New Pitch", new_pitch_path %>
 
+        <% @pitches.each do |pitch| %>
+          <li style="list-style-type: none"><%= link_to pitch.title, pitch%>
+            <strong>Content:
+            </strong>
+            <%= pitch.content %></li>
+        <% end %>
+      </div>
+      <div id="footer">
+        Copyright &copy; 2018 Charlie Tung & Eric Razor
+      </div>
+    </div>
 
-
-<!--
-create_table "pitches", force: :cascade do |t|
-  t.string "title"
-  t.text "content"
-  t.integer "student_id"
-  t.datetime "created_at", null: false
-  t.datetime "updated_at", null: false
-end -->
+  </body>
+</html>
