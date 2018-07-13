@@ -1,16 +1,35 @@
+<div class="container">
 <h1>Edit Profile</h1>
 <%= form_for @student do |f| %>
+  <div class="form-group">
   <%= f.label "Name" %>
-  <%= f.text_field :name %>
+  <%= f.text_field :name, class: "form-control" %> <br>
+</div>
+  <div class="form-group">
   <%= f.label "Biography" %>
-  <%= f.text_area :bio %>
+  <%= f.text_area :bio, class: "form-control" %> <br>
+  </div>
+
+  <div class="form-group">
   <%= f.label "Email" %>
-  <%= f.text_field :email %>
+  <%= f.text_field :email,class: "form-control" %> <br>
+  </div>
+
+  <div class="form-group">
   <%= f.label "Password" %>
-  <%= f.password_field :password %>
+  <%= f.password_field :password,class: "form-control" %> <br>
+  </div>
+
+  <div class="form-group">
   <%= f.label "Password Confirmation" %>
-  <%= f.password_field :password_confirmation %>
-  <%= f.submit "Submit" %>
+  <%= f.password_field :password_confirmation,class: "form-control" %> <br>
+  </div>
+  <div class="form-group">
+  <%= f.label :profile_picture %>
+  <br>
+  <%= f.file_field :profile_picture %> <br>
+  </div>
+  <%= f.submit "Submit", class: "btn btn-secondary" %>
+  <%= link_to "delete profile", student_path(@student), method: :delete, class: 'btn btn-danger' %>
 <% end %>
-<%= button_to "DESTROY #{@student.name}", student_path(@student), method: :delete, class: 'btn, btn-danger' %>
-<!--  lol -->
+</div>

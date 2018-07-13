@@ -1,6 +1,6 @@
 <center>
-  <h1>Student's index</h1>
+  <h1 >Student's index</h1>
   <% @students.each do |student| %>
-  <li><%= link_to student.name, student_path(student) %></li>
-  <% end %>  
+  <li class="student_names"><%= link_to student.name, student_path(student) %></li>
+  <% end %>
 </center>

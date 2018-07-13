@@ -1,5 +1,5 @@
 <center>
-  <h1>Your Profile</h1>
+  <h1>Profile</h1>
 </center>
 
 
@@ -7,19 +7,20 @@
   <% if @student.profile_picture.attached? %>
   <!-- @post.image.present? will always return true, use attached? to check presence -->
   <p>
-    <strong>Image:</strong>
     <br>
-    <%= image_tag @student.profile_picture %>
+    <%= image_tag @student.profile_picture, class: "student_image" %>
   </p>
   <% end %>
 
   <p>
+  <div class="form-control">
     <%= @student.name %>
   </p>
 
   <p>
     <%= @student.bio %>
   </p>
+  </div>
 
   <% @student.projects.each do |project| %>
     <li>
