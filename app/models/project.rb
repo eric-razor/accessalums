@@ -15,4 +15,6 @@ class Project < ApplicationRecord
     end
   end
 
+  # i need to when people put .com.com
+
 end

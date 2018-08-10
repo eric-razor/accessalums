@@ -1,14 +1,6 @@
 class PitchesController < ApplicationController
   before_action :authorized
-
-  #
-  # create_table "pitches", force: :cascade do |t|
-  #   t.string "title"
-  #   t.text "content"
-  #   t.integer "student_id"
-  #   t.datetime "created_at", null: false
-  #   t.datetime "updated_at", null: false
-  # end
+  skip_before_action :authorized, only: [:index, :show]
     def index
       @pitches = Pitch.all
     end
@@ -17,7 +9,6 @@ class PitchesController < ApplicationController
       @pitch = Pitch.find(params[:id])
       @comments = @pitch.comments
       @comment = Comment.new
-      # render :show
     end
 
     def edit
@@ -52,7 +43,5 @@ class PitchesController < ApplicationController
     def pitch_params
       params.require(:pitch).permit(:title, :content)
     end
-
-    # Finish all this tonight
 
 end

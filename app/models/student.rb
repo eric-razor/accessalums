@@ -6,6 +6,23 @@ class Student < ApplicationRecord
   has_one_attached :profile_picture
   validates :email, uniqueness: true
   validates_length_of :password, :in => 6..20
+  before_save :sanitize_email
+
+
+  def sanitize_email
+    if self.email.nil?
+      nil
+    elsif !self.email.include?(".com")
+      self.email = self.email + ".com"
+      if !self.email.include?("htt")
+        self.email = "http://" + self.email
+      end
+    elsif !self.email.include?("htt")
+      self.email = "http://" + self.email
+    end
+  end
+
+  # i need to when people put .com.com
+
+
 end
-#how do you know what can be named anything and when it can't?
-#use css syntax example
