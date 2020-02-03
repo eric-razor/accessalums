@@ -44,9 +44,15 @@
   </div>
 
   <div class="form-group">
+    <%= f.label "Programming languages" %>
+    <%= f.text_field :langauge, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
   <%= f.label "Password" %>
   <%= f.password_field :password,class: "form-control" %> <br>
   </div>
+
 
   <div class="form-group">
   <%= f.label "Password Confirmation" %>
@@ -57,6 +63,8 @@
   <br>
   <%= f.file_field :profile_picture %> <br>
   </div>
+
+
   <%= f.submit "Submit", class: "btn btn-secondary" %>
   <%= link_to "delete profile", student_path(@student), method: :delete, class: 'btn btn-danger' %>
 <% end %>

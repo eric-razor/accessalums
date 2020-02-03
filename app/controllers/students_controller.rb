@@ -3,15 +3,12 @@ class StudentsController < ApplicationController
   before_action :matching_student, only: [:edit, :update, :destroy]
   skip_before_action :authorized, only: [:welcome, :index, :new, :create, :show]
 
-
-  # [:show, :new, :create,:edit,:update, :destroy]
   def welcome
     # redirect_to current_student
     render :welcome #a welcome page
   end
 
   def index
-    #wouldn't this represent all of a students followers?
     @students = Student.with_attached_profile_picture
   end
 
@@ -42,14 +39,14 @@ class StudentsController < ApplicationController
   def update
     @student = Student.find(params[:id])
     @student.update(student_params)
-
     redirect_to student_path(@student)
+
   end
 
   def destroy
     @student = Student.find(params[:id])
     @student.destroy
-
+    
     redirect_to students_path
   end
 

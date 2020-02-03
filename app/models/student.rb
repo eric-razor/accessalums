@@ -7,5 +7,3 @@ class Student < ApplicationRecord
   validates :email, uniqueness: true
   validates_length_of :password, :in => 6..20
 end
-#how do you know what can be named anything and when it can't?
-#use css syntax example
